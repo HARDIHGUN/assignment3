@@ -1,8 +1,8 @@
 # Loan Approval Visualization
 
 The goal is to explore how loan approval status (Approved vs Rejected) relates to:
-- **Average credit score
-- **Average annual income
+- Average credit score
+- Average annual income
 - Average loan amount
 
 These metrics are shown in a single grouped bar chart
