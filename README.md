@@ -1,4 +1,4 @@
-# Loan Approval Visualization
+## Loan Approval Visualization
 
 The goal is to explore how loan approval status (Approved vs Rejected) relates to:
 - Average credit score
@@ -34,16 +34,21 @@ The main visualization is a grouped bar chart:
   - Average Loan Amount (red)
 - Y-axis: Average value of the metric
 
-### Visual Channel
+## Visual Channel
 
 - X Position: Encodes the loan status category
 - Y Position: Encodes the magnitude of the average metric
 - Color: Encodes which metric is shown (credit score, income, or loan amount)
 - Length of bar: Represents the value of the average
 
-### Interaction  
+## Interaction  
   Bars start at height 0 and grow up to their final height using a D3 transition 
   When hovering a bar, a tooltip shows:
   - Loan status (Approved / Rejected)
   - Metric name
   - Exact average value (rounded to two decimals)
+
+  ## Use of CHATGPT
+  - Suggest improvements such as adding animation, a tooltip, legend, and axis/title labels
+  - Help debug issues with CSV paths, file extensions, and small syntax errors
+  
