@@ -1,9 +1,9 @@
 # Loan Approval Visualization
 
-The goal is to explore how **loan approval status** (Approved vs Rejected) relates to:
-- **Average credit score**
-- **Average annual income**
-- **Average loan amount**
+The goal is to explore how loan approval status (Approved vs Rejected) relates to:
+- **Average credit score
+- **Average annual income
+- Average loan amount
 
 These metrics are shown in a single grouped bar chart
 
@@ -19,7 +19,7 @@ Main columns used:
 - annual_income – numeric annual income  
 - loan_amount – numeric loan amount requested  
 
-In the visualization, I aggregate the data in D3 to compute **average values for each metric per loan_status**
+In the visualization, I aggregate the data in D3 to compute average values for each metric per loan_status
 
 ## Visualization Description
 
