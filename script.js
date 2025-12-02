@@ -7,7 +7,7 @@ d3.csv("Loan_approval_data_2025.csv").then(function (data) {
     d.loan_status = +d.loan_status; // 0 or 1
   });
 
-  // metrics i want
+  // metrics i want to use
    const metrics = [
     { key: "credit_score", label: "Average Credit Score" },
     { key: "annual_income", label: "Average Annual Income" },
@@ -30,7 +30,7 @@ d3.csv("Loan_approval_data_2025.csv").then(function (data) {
     (d) => d.loan_status
   );
 
- // Turn into a nice array for D3
+ // Turn into a nice array
   const chartData = grouped.map(([status, vals]) => ({
     status: statusNames[status] ?? status,
     values: metrics.map((m) => ({
@@ -52,7 +52,7 @@ d3.csv("Loan_approval_data_2025.csv").then(function (data) {
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  // 5) Scales
+  // Scales
   const x0 = d3
     .scaleBand()
     .domain(chartData.map((d) => d.status))
@@ -79,7 +79,7 @@ d3.csv("Loan_approval_data_2025.csv").then(function (data) {
     .domain(metrics.map((m) => m.key))
     .range(["#1f77b4", "#ff7f0e", "#d62728"]);
 
-  // 6) Axes
+  // Axes
   svg
     .append("g")
     .attr("transform", `translate(0,${height})`)
@@ -87,7 +87,7 @@ d3.csv("Loan_approval_data_2025.csv").then(function (data) {
 
   svg.append("g").call(d3.axisLeft(y));
 
-  // 7) Title
+  // Title
   svg
     .append("text")
     .attr("x", width / 2)
@@ -97,13 +97,13 @@ d3.csv("Loan_approval_data_2025.csv").then(function (data) {
     .style("font-weight", "bold")
     .text("Credit Score, Income & Loan Amount by Loan Status");
 
-  // 8) Tooltip
+  // Tooltip
   const tooltip = d3
     .select("body")
     .append("div")
     .attr("class", "tooltip");
 
-  // 9) Bars (grouped)
+  // Bars (grouped)
   const statusGroups = svg
     .selectAll(".status-group")
     .data(chartData)
@@ -167,4 +167,5 @@ d3.csv("Loan_approval_data_2025.csv").then(function (data) {
     .attr("y", 0)
     .attr("alignment-baseline", "middle")
     .text((d) => d.label);
+
 });
